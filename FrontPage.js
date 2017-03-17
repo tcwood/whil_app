@@ -3,13 +3,17 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import TestComp from './TestComp';
 import { tester, getRedditData } from './actionCreators';
+import EntryList from './EntryList';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'grey',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: 'black',
   },
 });
 
@@ -33,6 +37,7 @@ class FrontPage extends React.Component {
           <Text> Press me to change the state! </Text>
         </TouchableOpacity>
         <TestComp />
+        <EntryList />
       </View>
     );
   }
