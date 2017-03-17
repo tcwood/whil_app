@@ -3,12 +3,11 @@ import { View, Text } from 'react-native';
 import styles from './styles';
 
 
-const Entry = props => (
+const Entry = ({ title, author, ups, thumbnail }) => (
   <View style={styles.row}>
-    <Text>{'thumbnail'}</Text>
-    <Text>{'title'}</Text>
-    <Text>{'author'}</Text>
-    <Text>{'upVotes'}</Text>
+    <Text>{title}</Text>
+    <Text>{author}</Text>
+    <Text>{ups}</Text>
   </View>
 );
 
