@@ -15,24 +15,36 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     width,
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: 'black',
     height: 70,
   },
   EntryList: {
-    backgroundColor: 'blue',
     alignItems: 'center',
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: 'blue',
+    borderColor: 'green',
     width,
   },
   image: {
     height: 50,
     width: 50,
     borderRadius: 25,
+    marginRight: 5,
+  },
+  title: {
+    flex: 3,
+  },
+  author: {
+    flex: 2,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: 'black',
+  },
+  ups: {
+    flex: 1,
   },
 });
 

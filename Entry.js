@@ -9,12 +9,12 @@ const Entry = ({ title, author, ups, thumbnail }) => {
   return (
     <View style={styles.row}>
       <Image
-        source={{ uri: image }}
         style={styles.image}
+        source={{ uri: image }}
       />
-      <Text>{title}</Text>
-      <Text>{author}</Text>
-      <Text>{ups}</Text>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.author}>{author}</Text>
+      <Text style={styles.ups}>{ups}</Text>
     </View>
   );
 };

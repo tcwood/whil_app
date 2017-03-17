@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import Entry from './Entry';
 import styles from './styles';
@@ -7,21 +7,23 @@ import styles from './styles';
 const EntryList = (props) => {
   return (
     <View style={styles.EntryList}>
-      {props.redditData.length > 0 &&
-        props.redditData.map((item, index) => {
-          const { id, title, author, ups, thumbnail } = item.data;
-          return (
-            <Entry
-              key={id}
-              index={index}
-              title={title}
-              author={author}
-              ups={ups}
-              thumbnail={thumbnail}
-            />
-          );
-        })
-      }
+      <ScrollView>
+        {props.redditData.length > 0 &&
+          props.redditData.map((item, index) => {
+            const { id, title, author, ups, thumbnail } = item.data;
+            return (
+              <Entry
+                key={id}
+                index={index}
+                title={title}
+                author={author}
+                ups={ups}
+                thumbnail={thumbnail}
+              />
+            );
+          })
+        }
+      </ScrollView>
     </View>
   );
 };
