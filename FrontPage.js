@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import TestComp from './TestComp';
 import { tester, getRedditData } from './actionCreators';
+import Header from './Header';
+import TestComp from './TestComp';
 import EntryList from './EntryList';
 import styles from './styles';
 
@@ -23,7 +24,7 @@ class FrontPage extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Placholder for the front page</Text>
+        <Header />
         <TouchableOpacity onPress={this.handleTextPress}>
           <Text> Press me to change the state! </Text>
         </TouchableOpacity>

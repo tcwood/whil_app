@@ -7,7 +7,7 @@ const Entry = ({ title, author, ups, thumbnail }) => {
   // Use a default question mark image if no image is provided
   const image = thumbnail === 'self' || thumbnail === 'default' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blue_Question.svg/128px-Blue_Question.svg.png' : thumbnail;
   return (
-    <View style={styles.row}>
+    <View style={styles.entry}>
       <Image
         style={styles.image}
         source={{ uri: image }}

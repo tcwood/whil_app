@@ -6,7 +6,7 @@ import styles from './styles';
 
 const EntryList = (props) => {
   return (
-    <View style={styles.EntryList}>
+    <View style={styles.entryList}>
       <ScrollView>
         {props.redditData.length > 0 &&
           props.redditData.map((item, index) => {
