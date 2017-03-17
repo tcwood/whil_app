@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   title: {
-    flex: 3,
+    flex: 3.5,
   },
   author: {
     flex: 2,
