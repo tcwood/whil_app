@@ -12,9 +12,12 @@ class FrontPage extends React.Component {
     this.handleTextPress = this.handleTextPress.bind(this);
   }
 
+  componentDidMount() {
+    this.props.dispatch(getRedditData());
+  }
+
   handleTextPress() {
     this.props.dispatch(tester('This is the new state'));
-    this.props.dispatch(getRedditData());
   }
 
   render() {

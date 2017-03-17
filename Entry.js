@@ -6,7 +6,6 @@ import styles from './styles';
 const Entry = ({ title, author, ups, thumbnail }) => {
   // Use a default question mark image if no image is provided
   const image = thumbnail === 'self' || thumbnail === 'default' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blue_Question.svg/128px-Blue_Question.svg.png' : thumbnail;
-  console.log('image', image);
   return (
     <View style={styles.row}>
       <Image
@@ -20,8 +19,8 @@ const Entry = ({ title, author, ups, thumbnail }) => {
   );
 };
 
-
 const { string, number } = React.PropTypes;
+
 Entry.propTypes = {
   title: string.isRequired,
   author: string.isRequired,
