@@ -1,15 +1,24 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from './styles';
 
 
-const Entry = ({ title, author, ups, thumbnail }) => (
-  <View style={styles.row}>
-    <Text>{title}</Text>
-    <Text>{author}</Text>
-    <Text>{ups}</Text>
-  </View>
-);
+const Entry = ({ title, author, ups, thumbnail }) => {
+  // Use a default question mark image if no image is provided
+  const image = thumbnail === 'self' || thumbnail === 'default' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blue_Question.svg/128px-Blue_Question.svg.png' : thumbnail;
+  console.log('image', image);
+  return (
+    <View style={styles.row}>
+      <Image
+        source={{ uri: image }}
+        style={styles.image}
+      />
+      <Text>{title}</Text>
+      <Text>{author}</Text>
+      <Text>{ups}</Text>
+    </View>
+  );
+};
 
 
 const { string, number } = React.PropTypes;

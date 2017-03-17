@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: 'black',
+    height: 70,
   },
   EntryList: {
     backgroundColor: 'blue',
@@ -27,6 +28,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'blue',
     width,
+  },
+  image: {
+    height: 50,
+    width: 50,
+    borderRadius: 25,
   },
 });
 
