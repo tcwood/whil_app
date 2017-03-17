@@ -8,14 +8,14 @@ class TestComp extends React.Component {
       <View>
         <Text>{this.props.testOutput}</Text>
       </View>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    testOutput: state.test
-  }
-}
+    testOutput: state.test,
+  };
+};
 
 export default connect(mapStateToProps)(TestComp);
