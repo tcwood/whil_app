@@ -25,7 +25,7 @@ class FrontPage extends React.Component {
   }
 
   render() {
-    console.log('hello!!!! world');
+    console.log('redditData retrieved from state', this.props.redditData);
     return (
       <View style={styles.container}>
         <Text>Placholder for the front page</Text>
@@ -39,9 +39,9 @@ class FrontPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state', state);
   return {
     testOutput: state.test,
+    redditData: state.redditData,
   };
 };
 
