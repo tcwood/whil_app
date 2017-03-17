@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import TestComp from './TestComp';
-import { tester } from './actionCreators';
+import { tester, getRedditData } from './actionCreators';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,6 +21,7 @@ class FrontPage extends React.Component {
 
   handleTextPress() {
     this.props.dispatch(tester('This is the new state'));
+    this.props.dispatch(getRedditData());
   }
 
   render() {
