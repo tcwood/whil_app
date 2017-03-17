@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { tester, getRedditData } from './actionCreators';
 import Header from './Header';
+import ColumnNames from './ColumnNames';
 import TestComp from './TestComp';
 import EntryList from './EntryList';
 import styles from './styles';
@@ -25,6 +26,7 @@ class FrontPage extends React.Component {
     return (
       <View style={styles.container}>
         <Header />
+        <ColumnNames />
         <TouchableOpacity onPress={this.handleTextPress}>
           <Text> Press me to change the state! </Text>
         </TouchableOpacity>

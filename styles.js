@@ -7,23 +7,38 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'grey',
     justifyContent: 'flex-start',
-    borderWidth: 1,
-    borderColor: 'black',
   },
   header: {
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
+    marginBottom: 5,
     backgroundColor: 'blue',
-    height: 70,
+    height: 60,
   },
   headerText: {
     color: 'white',
     fontSize: 30,
   },
+  columnNames: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  columnNameText: {
+    fontSize: 20,
+    fontWeight: '600',
+    textDecorationLine: 'underline',
+  },
+  colTitle: {
+    marginRight: width * 0.3,
+  },
+  colAuthor: {
+    marginRight: width * 0.07,
+  },
+  colUps: {
+    marginRight: 4,
+  },
   entryList: {
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: 'green',
     width,
   },
   entry: {
@@ -31,7 +46,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width,
-    borderRadius: 4,
     borderWidth: 1,
     height: 70,
   },
@@ -46,12 +60,12 @@ const styles = StyleSheet.create({
   },
   author: {
     flex: 2,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: 'black',
   },
   ups: {
     flex: 1,
+  },
+  placeholder: {
+    width: 55,
   },
 });
 

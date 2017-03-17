@@ -6,7 +6,7 @@ import styles from './styles';
 const Entry = ({ title, author, ups, thumbnail }) => {
   // Use a default question mark image if no image is provided
   const image = thumbnail === 'self' || thumbnail === 'default' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blue_Question.svg/128px-Blue_Question.svg.png' : thumbnail;
-  const titleText = title.length > 50 ? title.slice(0, 45) + '...' : title;
+  const titleText = title.length > 50 ? `${title.slice(0, 45)}...` : title;
 
   return (
     <View style={styles.entry}>
