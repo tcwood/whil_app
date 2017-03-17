@@ -1,14 +1,22 @@
 import React from 'react';
 import { View } from 'react-native';
+import { connect } from 'react-redux';
 import Entry from './Entry';
 import styles from './styles';
 
-const EntryList = () => (
+const EntryList = (props) => (
   <View style={styles.EntryList}>
-    <Entry />
-    <Entry />
-    <Entry />
+    {props.redditData.length > 0 &&
+      <Entry />
+    }
   </View>
 );
 
-export default EntryList;
+const mapStateToProps = ({ redditData }) => {
+  return ({
+    redditData,
+  });
+};
+
+
+export default connect(mapStateToProps)(EntryList);

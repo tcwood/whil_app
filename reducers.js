@@ -1,6 +1,6 @@
 const DEFAULT_STATE = {
   test: 'I are zee default statez!',
-  redditData: '',
+  redditData: [],
 };
 
 const setTestOutput = (state, action) => {
