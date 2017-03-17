@@ -25,11 +25,16 @@ const EntryList = (props) => {
   );
 };
 
+const { arrayOf, object } = React.PropTypes;
+
+EntryList.propTypes = {
+  redditData: arrayOf(object).isRequired,
+};
+
 const mapStateToProps = ({ redditData }) => {
   return ({
     redditData,
   });
 };
-
 
 export default connect(mapStateToProps)(EntryList);

@@ -18,7 +18,6 @@ class FrontPage extends React.Component {
   }
 
   render() {
-    console.log('redditData retrieved from state', this.props.redditData);
     return (
       <View style={styles.container}>
         <Text>Placholder for the front page</Text>
@@ -32,10 +31,14 @@ class FrontPage extends React.Component {
   }
 }
 
+const { func } = React.PropTypes;
+
+FrontPage.propTypes = {
+  dispatch: func.isRequired,
+};
+
 const mapStateToProps = (state) => {
   return {
-    testOutput: state.test,
-    redditData: state.redditData,
   };
 };
 

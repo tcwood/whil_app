@@ -18,4 +18,10 @@ const mapStateToProps = (state) => {
   };
 };
 
+const { string } = React.PropTypes;
+
+TestComp.propTypes = {
+  testOutput: string.isRequired,
+};
+
 export default connect(mapStateToProps)(TestComp);

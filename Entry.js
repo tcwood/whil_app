@@ -11,4 +11,14 @@ const Entry = ({ title, author, ups, thumbnail }) => (
   </View>
 );
 
+
+const { string, number } = React.PropTypes;
+Entry.propTypes = {
+  title: string.isRequired,
+  author: string.isRequired,
+  ups: number.isRequired,
+  thumbnail: string.isRequired,
+};
+
+
 export default Entry;
