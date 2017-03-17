@@ -1,18 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text } from 'react-native';
+import styles from './styles';
 
-const { width } = Dimensions.get('window');
-
-const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: 'black',
-  },
-});
 
 const Entry = props => (
   <View style={styles.row}>
