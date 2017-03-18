@@ -16,7 +16,7 @@ Make sure you have npm and an ios simulator installed before doing the following
         - this also might take a little while if expo isn't already installed on your simulator
 1. You should be good to go :)
 
-The app should work on an Android simulator or through expo's app on mobile, but I haven't tested it yet.
+The app should also work on an Android simulator or through expo's app on mobile, but I haven't tested those out yet
 - To try to run on an Android simulator, go into the cloned directory and run ==> npm run android
 - To try to run on expo's app
     - Make sure you have expo's app installed on your ios or android phone (https://expo.io/)
