@@ -2,6 +2,14 @@ export function addRedditData(redditData) {
   return { type: 'ADD_REDDIT_DATA', redditData };
 }
 
+export function setRefreshingTrue() {
+  return { type: 'SET_REFRESHING_TRUE' };
+}
+
+export function setRefreshingFalse() {
+  return { type: 'SET_REFRESHING_FALSE' };
+}
+
 export function getRedditData() {
   return function (dispatch) {
     fetch('https://www.reddit.com/.json?raw_json=1')
@@ -9,6 +17,7 @@ export function getRedditData() {
         res.json().then((response) => {
           // Accessing properties further down so only storing array of link objects
           dispatch(addRedditData(response.data.children));
+          dispatch(setRefreshingFalse());
         }).catch((error) => {
           console.log('error with res.json inside actionCreator', error);
         });
@@ -16,6 +25,13 @@ export function getRedditData() {
       .catch((error) => {
         console.error('fetch error', error);
       });
+  };
+}
+
+export function refreshData() {
+  return function (dispatch) {
+    dispatch(setRefreshingTrue());
+    dispatch(getRedditData());
   };
 }
 
