@@ -7,17 +7,15 @@ export function addRedditData(redditData) {
 }
 
 export function getRedditData() {
-  // NOTE: can probably get rid of getState later
-  return function (dispatch, getState) {
+  return function (dispatch) {
     fetch('https://www.reddit.com/.json?raw_json=1')
       .then((res) => {
         res.json().then((response) => {
           // Accessing properties further down so only storing array of link objects
           dispatch(addRedditData(response.data.children));
-          // console.log('response.data for reals', response.data);
         }).catch((error) => {
-          console.log('error with res.json', error);
-        })
+          console.log('error with res.json inside actionCreator', error);
+        });
 
         // dispatch(addRedditData(res.data.children));
       })
@@ -26,3 +24,8 @@ export function getRedditData() {
       });
   };
 }
+
+export function selectEntry(entryData) {
+  return { type: 'SELECT_ENTRY', entryData };
+}
+

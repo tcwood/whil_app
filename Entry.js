@@ -1,34 +1,63 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { TouchableOpacity, Text, Image } from 'react-native';
+import { connect } from 'react-redux';
+import { selectEntry } from './actionCreators';
 import styles from './styles';
 
 
-const Entry = ({ title, author, ups, thumbnail }) => {
-  // Use a default question mark image if no image is provided
-  const image = thumbnail === 'self' || thumbnail === 'default' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blue_Question.svg/128px-Blue_Question.svg.png' : thumbnail;
-  const titleText = title.length > 50 ? `${title.slice(0, 45)}...` : title;
+class Entry extends React.Component {
+  constructor(props) {
+    super(props);
+    // console.log('inside Entry, ' this.props.title)
+    this.handleEntryPress = this.handleEntryPress.bind(this);
+  }
 
-  return (
-    <View style={styles.entry}>
-      <Image
-        style={styles.image}
-        source={{ uri: image }}
-      />
-      <Text style={styles.title}>{titleText}</Text>
-      <Text style={styles.author}>{author}</Text>
-      <Text style={styles.ups}>{ups}</Text>
-    </View>
-  );
-};
+  handleEntryPress() {
+    // need to dispatch an action to update selectedEntry in the store
+    this.props.dispatch(selectEntry(this.props.data));
+  }
 
-const { string, number } = React.PropTypes;
+  render() {
+    const { title, author, ups, thumbnail } = this.props.data.data;
+    const image = thumbnail === 'self' || thumbnail === 'default' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blue_Question.svg/128px-Blue_Question.svg.png' : thumbnail;
+    const titleText = title.length > 50 ? `${title.slice(0, 45)}...` : title;
+
+    return (
+      <TouchableOpacity
+        style={styles.entry}
+        onPress={this.handleEntryPress}
+      >
+        <Image
+          style={styles.image}
+          source={{ uri: image }}
+        />
+        <Text style={styles.title}>{titleText}</Text>
+        <Text style={styles.author}>{author}</Text>
+        <Text style={styles.ups}>{ups}</Text>
+      </TouchableOpacity>
+    );
+  }
+}
+
+const { string, number, shape, func } = React.PropTypes;
 
 Entry.propTypes = {
-  title: string.isRequired,
-  author: string.isRequired,
-  ups: number.isRequired,
-  thumbnail: string.isRequired,
+  data: shape({
+    data: shape({
+      title: string.isRequired,
+      author: string.isRequired,
+      ups: number.isRequired,
+      thumbnail: string.isRequired,
+    }),
+  }).isRequired,
+  dispatch: func.isRequired,
+};
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ownProps,
+  };
 };
 
 
-export default Entry;
+export default connect(mapStateToProps)(Entry);

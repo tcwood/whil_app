@@ -5,7 +5,6 @@ const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'grey',
     justifyContent: 'flex-start',
   },
   header: {
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
     marginRight: width * 0.3,
   },
   colAuthor: {
-    marginRight: width * 0.07,
+    marginRight: width * 0.09,
   },
   colUps: {
     marginRight: 4,

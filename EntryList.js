@@ -4,21 +4,18 @@ import { connect } from 'react-redux';
 import Entry from './Entry';
 import styles from './styles';
 
-const EntryList = (props) => {
+const EntryList = ({ shouldShowOne, selectedEntry, redditData }) => {
+  const dataToRender = shouldShowOne ? selectedEntry : redditData;
   return (
     <View style={styles.entryList}>
       <ScrollView>
-        {props.redditData.length > 0 &&
-          props.redditData.map((item, index) => {
-            const { id, title, author, ups, thumbnail } = item.data;
+        {redditData.length > 0 &&
+          dataToRender.map((item, index) => {
             return (
               <Entry
-                key={id}
+                key={item.data.id}
                 index={index}
-                title={title}
-                author={author}
-                ups={ups}
-                thumbnail={thumbnail}
+                data={item}
               />
             );
           })
@@ -28,14 +25,18 @@ const EntryList = (props) => {
   );
 };
 
-const { arrayOf, object } = React.PropTypes;
+const { bool, arrayOf, object } = React.PropTypes;
 
 EntryList.propTypes = {
+  shouldShowOne: bool.isRequired,
+  selectedEntry: arrayOf(object).isRequired,
   redditData: arrayOf(object).isRequired,
 };
 
-const mapStateToProps = ({ redditData }) => {
+const mapStateToProps = ({ shouldShowOne, redditData, selectedEntry }) => {
   return ({
+    shouldShowOne,
+    selectedEntry,
     redditData,
   });
 };
