@@ -6,6 +6,8 @@ const dark = '#021025';
 const medium = '#0F2D59';
 const light = '#90A8CC';
 
+const font = 'Helvetica';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -21,9 +23,10 @@ const styles = StyleSheet.create({
     height: 60,
   },
   headerText: {
-    color: light,
-    fontSize: 40,
     marginLeft: 20,
+    fontSize: 40,
+    fontFamily: font,
+    color: light,
   },
   backButton: {
     color: light,
@@ -37,7 +40,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: light,
     fontWeight: '600',
-    textDecorationLine: 'underline',
   },
   colTitle: {
     marginRight: width * 0.25,
@@ -71,15 +73,18 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 3,
+    fontFamily: font,
+    color: dark,
   },
   author: {
     flex: 2.5,
+    fontFamily: font,
+    color: dark,
   },
   ups: {
     flex: 1,
-  },
-  placeholder: {
-    width: 55,
+    fontFamily: font,
+    color: dark,
   },
 });
 

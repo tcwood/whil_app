@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { backToAllData } from './actionCreators';
-import styles from './styles';
+import { backToAllData } from '../redux/actionCreators';
+import styles from '../styles/styles';
 
 class Header extends React.Component {
   constructor(props) {

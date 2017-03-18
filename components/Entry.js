@@ -1,9 +1,8 @@
 import React from 'react';
 import { TouchableOpacity, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
-import { selectEntry } from './actionCreators';
-import styles from './styles';
-
+import { selectEntry } from '../redux/actionCreators';
+import styles from '../styles/styles';
 
 class Entry extends React.Component {
   constructor(props) {

@@ -1,15 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store';
-import FrontPage from './FrontPage';
+import store from './redux/store';
+import FrontPage from './components/FrontPage';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <FrontPage />
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <FrontPage />
+  </Provider>
+);
+
+export default App;
 

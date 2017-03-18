@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, ScrollView, RefreshControl } from 'react-native';
 import { connect } from 'react-redux';
+import { refreshData } from '../redux/actionCreators';
 import Entry from './Entry';
-import { refreshData } from './actionCreators';
-import styles from './styles';
+import styles from '../styles/styles';
 
 class EntryList extends React.Component {
   constructor(props) {

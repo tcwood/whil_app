@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import styles from './styles';
+import styles from '../styles/styles';
 
 const { columnNames, columnNameText, colTitle, colAuthor, colUps, placeholder } = styles;
-
 
 const ColumnNames = () => (
   <View style={columnNames}>
