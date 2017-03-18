@@ -20,7 +20,8 @@ class Entry extends React.Component {
   render() {
     const { title, author, ups, thumbnail } = this.props.data.data;
     const image = thumbnail === 'self' || thumbnail === 'default' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blue_Question.svg/128px-Blue_Question.svg.png' : thumbnail;
-    const titleText = title.length > 50 ? `${title.slice(0, 45)}...` : title;
+    const titleText = title.length > 60 ? `${title.slice(0, 54)}...` : title;
+    const authorText = author.length > 13 ? author.slice(0, 14) : author;
 
     return (
       <TouchableOpacity
@@ -32,7 +33,7 @@ class Entry extends React.Component {
           source={{ uri: image }}
         />
         <Text style={styles.title}>{titleText}</Text>
-        <Text style={styles.author}>{author}</Text>
+        <Text style={styles.author}>{authorText}</Text>
         <Text style={styles.ups}>{ups}</Text>
       </TouchableOpacity>
     );

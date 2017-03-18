@@ -1,14 +1,7 @@
 const DEFAULT_STATE = {
-  test: 'I are zee default statez!',
   redditData: [],
   shouldShowOne: false,
   selectedEntry: [],
-};
-
-const setTestOutput = (state, action) => {
-  const newState = {};
-  Object.assign(newState, state, { test: action.test });
-  return newState;
 };
 
 const setRedditData = (state, action) => {
@@ -36,8 +29,6 @@ const rootReducer = (state = DEFAULT_STATE, action) => {
       return setRedditData(state, action);
     case 'SELECT_ENTRY':
       return selectEntry(state, action);
-    case 'TEST_REDUX':
-      return setTestOutput(state, action);
     case 'BACK_TO_ALL_DATA':
       return goBack(state);
     default:

@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     color: 'white',
-    fontSize: 15,
+    fontSize: 20,
   },
   columnNames: {
     flexDirection: 'row',
@@ -34,13 +34,13 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   colTitle: {
-    marginRight: width * 0.3,
+    marginRight: width * 0.25,
   },
   colAuthor: {
-    marginRight: width * 0.09,
+    marginRight: width * 0.13,
   },
   colUps: {
-    marginRight: 4,
+    marginRight: 7,
   },
   entryList: {
     alignItems: 'center',
@@ -61,10 +61,10 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   title: {
-    flex: 3.5,
+    flex: 3,
   },
   author: {
-    flex: 2,
+    flex: 2.5,
   },
   ups: {
     flex: 1,

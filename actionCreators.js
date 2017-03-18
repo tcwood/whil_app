@@ -1,7 +1,3 @@
-export function tester(test) {
-  return { type: 'TEST_REDUX', test };
-}
-
 export function addRedditData(redditData) {
   return { type: 'ADD_REDDIT_DATA', redditData };
 }
