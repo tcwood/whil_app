@@ -8,15 +8,21 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   header: {
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
     marginBottom: 5,
     backgroundColor: 'blue',
     height: 60,
   },
   headerText: {
     color: 'white',
-    fontSize: 30,
+    fontSize: 40,
+    marginLeft: 20,
+  },
+  backButton: {
+    color: 'white',
+    fontSize: 15,
   },
   columnNames: {
     flexDirection: 'row',

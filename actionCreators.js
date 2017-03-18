@@ -16,8 +16,6 @@ export function getRedditData() {
         }).catch((error) => {
           console.log('error with res.json inside actionCreator', error);
         });
-
-        // dispatch(addRedditData(res.data.children));
       })
       .catch((error) => {
         console.error('fetch error', error);
@@ -29,3 +27,6 @@ export function selectEntry(entryData) {
   return { type: 'SELECT_ENTRY', entryData };
 }
 
+export function backToAllData() {
+  return { type: 'BACK_TO_ALL_DATA' };
+}

@@ -23,6 +23,13 @@ const selectEntry = (state, action) => {
   return newState;
 };
 
+const goBack = (state) => {
+  console.log('inside go back reducer')
+  const newState = {};
+  Object.assign(newState, state, { shouldShowOne: false });
+  return newState;
+};
+
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case 'ADD_REDDIT_DATA':
@@ -31,6 +38,8 @@ const rootReducer = (state = DEFAULT_STATE, action) => {
       return selectEntry(state, action);
     case 'TEST_REDUX':
       return setTestOutput(state, action);
+    case 'BACK_TO_ALL_DATA':
+      return goBack(state);
     default:
       return state;
   }
