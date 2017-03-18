@@ -2,26 +2,31 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
+const dark = '#021025';
+const medium = '#0F2D59';
+const light = '#90A8CC';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
+    backgroundColor: medium,
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     marginBottom: 5,
-    backgroundColor: 'blue',
+    backgroundColor: dark,
     height: 60,
   },
   headerText: {
-    color: 'white',
+    color: light,
     fontSize: 40,
     marginLeft: 20,
   },
   backButton: {
-    color: 'white',
+    color: light,
     fontSize: 20,
   },
   columnNames: {
@@ -30,6 +35,7 @@ const styles = StyleSheet.create({
   },
   columnNameText: {
     fontSize: 20,
+    color: light,
     fontWeight: '600',
     textDecorationLine: 'underline',
   },
@@ -40,19 +46,22 @@ const styles = StyleSheet.create({
     marginRight: width * 0.13,
   },
   colUps: {
-    marginRight: 7,
+    marginRight: 15,
   },
   entryList: {
     alignItems: 'center',
     width,
   },
   entry: {
+    height: 70,
+    width: width - 10,
+    margin: 5,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width,
+    backgroundColor: light,
     borderWidth: 1,
-    height: 70,
+    borderRadius: 10,
   },
   image: {
     height: 50,
