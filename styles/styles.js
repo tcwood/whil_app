@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 const dark = '#021025';
 const medium = '#0F2D59';
@@ -49,6 +49,9 @@ const styles = StyleSheet.create({
   },
   colUps: {
     marginRight: 15,
+  },
+  loading: {
+    marginTop: height * 0.3,
   },
   entryList: {
     alignItems: 'center',

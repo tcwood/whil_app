@@ -7,12 +7,10 @@ import styles from '../styles/styles';
 class Entry extends React.Component {
   constructor(props) {
     super(props);
-    // console.log('inside Entry, ' this.props.title)
     this.handleEntryPress = this.handleEntryPress.bind(this);
   }
 
   handleEntryPress() {
-    // need to dispatch an action to update selectedEntry in the store
     this.props.dispatch(selectEntry(this.props.data));
   }
 
@@ -54,11 +52,4 @@ Entry.propTypes = {
   dispatch: func.isRequired,
 };
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    ownProps,
-  };
-};
-
-
-export default connect(mapStateToProps)(Entry);
+export default connect()(Entry);

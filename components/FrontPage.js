@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { getRedditData } from '../redux/actionCreators';
 import Header from './Header';
@@ -17,16 +17,27 @@ class FrontPage extends React.Component {
       <View style={styles.container}>
         <Header />
         <ColumnNames />
+        {this.props.loading &&
+          <ActivityIndicator
+            style={styles.loading}
+            size="large"
+          />
+        }
         <EntryList />
       </View>
     );
   }
 }
 
-const { func } = React.PropTypes;
+const { func, bool } = React.PropTypes;
 
 FrontPage.propTypes = {
   dispatch: func.isRequired,
+  loading: bool.isRequired,
 };
 
-export default connect()(FrontPage);
+const mapStateToProps = (state) => ({
+  loading: state.loading,
+});
+
+export default connect(mapStateToProps)(FrontPage);

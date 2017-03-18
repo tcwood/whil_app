@@ -3,40 +3,37 @@ const DEFAULT_STATE = {
   shouldShowOne: false,
   selectedEntry: [],
   refreshing: false,
+  loading: true,
 };
 
 const setRedditData = (state, action) => {
-  const newState = {};
-  Object.assign(newState, state, { redditData: action.redditData });
-  return newState;
+  return Object.assign({}, state, { redditData: action.redditData });
+};
+
+const setLoadingFalse = (state) => {
+  return Object.assign({}, state, { loading: false });
 };
 
 const setRefreshingTrue = (state) => {
-  const newState = {};
-  Object.assign(newState, state, { refreshing: true });
-  return newState;
+  return Object.assign({}, state, { refreshing: true });
 };
 
 const setRefreshingFalse = (state) => {
-  const newState = {};
-  Object.assign(newState, state, { refreshing: false });
-  return newState;
+  return Object.assign({}, state, { refreshing: false });
 };
 
 const selectEntry = (state, action) => {
-  const newState = {};
-  Object.assign(newState, state, { selectedEntry: [action.entryData], shouldShowOne: true });
-  return newState;
+  return Object.assign({}, state, { selectedEntry: [action.entryData], shouldShowOne: true });
 };
 
 const goBack = (state) => {
-  const newState = {};
-  Object.assign(newState, state, { shouldShowOne: false });
-  return newState;
+  return Object.assign({}, state, { shouldShowOne: false });
 };
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
+    case 'SET_LOADING_FALSE':
+      return setLoadingFalse(state);
     case 'SET_REFRESHING_TRUE':
       return setRefreshingTrue(state);
     case 'SET_REFRESHING_FALSE':
