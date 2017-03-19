@@ -1,3 +1,5 @@
+import { AsyncStorage } from 'react-native';
+
 export function addRedditData(redditData) {
   return { type: 'ADD_REDDIT_DATA', redditData };
 }
@@ -19,10 +21,10 @@ export function getRedditData() {
     fetch('https://www.reddit.com/.json?raw_json=1')
       .then((res) => {
         res.json().then((response) => {
-          // Accessing properties further down so only storing array of link objects
+          // Accessing properties further down so that it will only store an array of entry objects
           dispatch(addRedditData(response.data.children));
-          dispatch(setLoadingFalse());
           dispatch(setRefreshingFalse());
+          AsyncStorage.setItem('redditData', JSON.stringify(response.data.children));
         }).catch((error) => {
           console.log('error with res.json inside actionCreator', error);
         });

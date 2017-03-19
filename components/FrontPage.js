@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, AsyncStorage } from 'react-native';
 import { connect } from 'react-redux';
-import { getRedditData } from '../redux/actionCreators';
+import { getRedditData, addRedditData } from '../redux/actionCreators';
 import Header from './Header';
 import ColumnNames from './ColumnNames';
 import EntryList from './EntryList';
@@ -9,6 +9,15 @@ import styles from '../styles/styles';
 
 class FrontPage extends React.Component {
   componentDidMount() {
+    AsyncStorage.getItem('redditData')
+      .then((value) => {
+        if (value) {
+          this.props.dispatch(addRedditData(JSON.parse(value)));
+        }
+      })
+      .catch((err) => {
+        console.log('error in grabbing asyncStorage data', err);
+      });
     this.props.dispatch(getRedditData());
   }
 

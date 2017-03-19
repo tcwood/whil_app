@@ -7,11 +7,7 @@ const DEFAULT_STATE = {
 };
 
 const setRedditData = (state, action) => {
-  return Object.assign({}, state, { redditData: action.redditData });
-};
-
-const setLoadingFalse = (state) => {
-  return Object.assign({}, state, { loading: false });
+  return Object.assign({}, state, { redditData: action.redditData, loading: false });
 };
 
 const setRefreshingTrue = (state) => {
@@ -32,8 +28,6 @@ const goBack = (state) => {
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    case 'SET_LOADING_FALSE':
-      return setLoadingFalse(state);
     case 'SET_REFRESHING_TRUE':
       return setRefreshingTrue(state);
     case 'SET_REFRESHING_FALSE':
